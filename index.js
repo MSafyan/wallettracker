@@ -11,6 +11,10 @@ app.use(express.json());
 app.use("/wallet", require("./src/routes/wallet"));
 // require("./src/utils/tracker");
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
